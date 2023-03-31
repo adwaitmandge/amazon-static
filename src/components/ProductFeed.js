@@ -26,7 +26,6 @@ const ProductFeed = ({ products }) => {
         const { id, title, price, description, category, image } = product;
         return <Product key={id} product={product} />;
       })}
-      
     </div>
   );
 };

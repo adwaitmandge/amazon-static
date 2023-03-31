@@ -2,8 +2,17 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Banner from "../components/Banner";
 import ProductFeed from "../components/ProductFeed";
+import { useEffect, useState } from "react";
 
 const Home = ({ products }) => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) return null;
+
   return (
     <div className="bg-gray-100 h-screen ">
       <Head>
